@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>A Tiny Date Quest 💗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="scene" aria-live="polite">
+  <div class="stars">✦ ✧ ✦ ♡ ✦ ✧ ✦ ♡ ✦ ✧</div>
+  <div class="cloud cloud-a"></div><div class="cloud cloud-b"></div><div class="cloud cloud-c"></div>
+  <div class="city"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="hills"></div><div class="grass">♡ ✿ ♡ ✿ ♡ ✿ ♡ ✿ ♡</div>
+
+  <main class="card" id="app">
+    <!-- Cleaned up form for standard web hosting -->
+    <form name="date-quest" method="POST" style="display: contents;">
+      <input type="hidden" id="selectedDate" name="date" />
+      <input type="hidden" id="selectedChoices" name="choices" />
+
+      <section class="page active" id="page-1">
+        <div class="avatar"><div class="cat">ฅ^•ﻌ•^ฅ</div></div>
+        <h1>WILL YOU GO<br>OUT WITH ME?</h1>
+        <div class="buttons question-buttons">
+          <button type="button" class="pixel primary" id="yesBtn">YES ✦</button>
+          <button type="button" class="pixel" id="noBtn">No</button>
+        </div>
+        <p class="hint" id="hint">Be nice... say yes! ♡</p>
+      </section>
+
+      <section class="page" id="page-2">
+        <div class="avatar happy"><div class="cat">ฅ^•ﻌ•^ฅ</div></div>
+        <h1>YAYYYYY! ✦</h1>
+        <p class="subtitle">I knew you would say yes ♡</p>
+        <button type="button" class="pixel primary" data-next="3">LET'S PLAN IT →</button>
+      </section>
+
+      <section class="page" id="page-3">
+        <div class="avatar"><div class="cat smallcat">ฅ^•ﻌ•^ฅ</div></div>
+        <h1>PICK A DATE</h1>
+        <p class="subtitle">Choose the day for our cute little plan.</p>
+        <input id="date" class="date-input" type="date">
+        <button type="button" class="pixel" id="dateContinue">CONTINUE →</button>
+        <p class="hint" id="dateHint"></p>
+      </section>
+
+      <section class="page" id="page-4">
+        <div class="avatar"><div class="cat">ฅ^•ﻌ•^ฅ</div></div>
+        <h1 class="smaller">WHAT WOULD YOU LIKE TO<br>DO?</h1>
+        <div class="choices" id="choices">
+          <button type="button" class="choice">DINNER DATE</button><button type="button" class="choice">MOVIE NIGHT</button>
+          <button type="button" class="choice">COFFEE & WALK</button><button type="button" class="choice">A PICNIC</button>
+          <button type="button" class="choice">MINI GOLF</button><button type="button" class="choice">SURPRISE ME</button>
+        </div>
+        <button type="button" class="pixel" id="lockBtn">LOCK IT IN 🔒</button>
+        <p class="hint" id="choiceHint">Pick one or more ♡</p>
+      </section>
+
+      <section class="page" id="page-5">
+        <div class="success">✦</div>
+        <div class="avatar"><div class="cat">ฅ^•ﻌ•^ฅ</div></div>
+        <h1>IT'S A DATE! ♡</h1>
+        <p class="subtitle" id="summary"></p>
+        <button type="button" id="openNoteBtn" class="pixel primary">OPEN YOUR NOTE 💌</button>
+      </section>
+
+      <section class="page" id="page-6">
+        <div class="note-window">
+          <div class="note-bar"><span>♡ love_note.txt</span><b>×</b></div>
+          <div class="note-body">
+            <p>you're really cute no matter<br>what. don't let anyone tell<br>you any different, okay?</p>
+            <p>you make every ordinary day<br>feel special.</p>
+            <p>today and every day, I<br>celebrate us.</p>
+            <p class="sign">xoxo,<br><span>YATISH</span></p>
+          </div>
+        </div>
+        <button type="button" class="restart" id="restart">↻ PLAY AGAIN</button>
+      </section>
+    </form>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
