@@ -45,9 +45,9 @@ document.querySelector('#lockBtn').addEventListener('click',()=>{
   showPage(5);
 });
 
+// Directly handle submission via click on the button
 const formElement = document.querySelector('form');
-formElement.addEventListener('submit', (e) => {
-  e.preventDefault();
+document.querySelector('#openNoteBtn').addEventListener('click', () => {
   const formData = new FormData(formElement);
 
   fetch(formElement.action, {
