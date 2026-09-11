@@ -45,8 +45,18 @@ document.querySelector('#lockBtn').addEventListener('click',()=>{
   showPage(5);
 });
 
-// Transition to the final note page when clicked on GitHub Pages
-document.querySelector('#openNoteBtn').addEventListener('click', () => {
+// Submit form via fetch to Formspree in the background without breaking the page experience
+const formElement = document.querySelector('form');
+formElement.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const formData = new FormData(formElement);
+
+  fetch(formElement.action, {
+    method: 'POST',
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  }).catch((error) => console.error('Form submission error:', error));
+
   showPage(6);
 });
 
