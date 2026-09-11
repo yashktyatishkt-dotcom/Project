@@ -45,7 +45,6 @@ document.querySelector('#lockBtn').addEventListener('click',()=>{
   showPage(5);
 });
 
-// Submit form via fetch to Formspree in the background without breaking the page experience
 const formElement = document.querySelector('form');
 formElement.addEventListener('submit', (e) => {
   e.preventDefault();
